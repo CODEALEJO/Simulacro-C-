@@ -32,14 +32,21 @@ public class User
 
     }
 
-    protected static void ShowDetails(){
+    protected static void ShowDetails()
+    {
+    }
+    protected static void CalculateAge()
+    {
 
     }
-    protected static void CalculateAge(){
+
+    protected static void ShowAge()
+    {
 
     }
 
-    protected static void ShowAge(){
-
+    public static void OverThirty(){
+       
     }
+
 }
