@@ -11,12 +11,16 @@ public class Customer : User
     public string? MemberShipLevel { get; set; }
     public string? PreferredPaymenMethod { get; set; }
 
+
+//constructor
     public Customer(string name, string lastName, string typeDocument, string identificationNumber, DateOnly? birthdate, string email, string phoneNumber, string adreess, string memberShipLevel, string preferredPaymenMethod) : base(name, lastName, typeDocument, identificationNumber, birthdate, email, phoneNumber, adreess)
     {
         MemberShipLevel = memberShipLevel;
         PreferredPaymenMethod = preferredPaymenMethod;
     }
 
+
+//method to update memberShip
     public static void UpdateMemberShipLevel()
     {
         Console.WriteLine("Ingrese el nombre del cliente al que le quieras cambiar la membresia ");
@@ -31,7 +35,7 @@ public class Customer : User
             Console.WriteLine("El cliente no se encuentra en la lista");
         }
     }
-
+//method show all customers
     public static void AllCustomers()
     {
         foreach (var item in customers)
@@ -40,17 +44,16 @@ public class Customer : User
             Console.WriteLine("---------------------------------------------------");
         };
     }
-
     public void GetInfoCustomers()
     {
         Console.WriteLine($"\n ID: {Id}\n nombre: {Name}\n Apellido: {LastName}\n Tipo de documento: {TypeDocument}\n numero de documento: {IdentificationNumber}\n fecha de nacimeinto: {Birthdate}\n correo electronico: {Email}\n Telefono: {PhoneNumber}\n direccion: {Adreess}\n Tipo de membresia {MemberShipLevel}\n metodo de pago: {PreferredPaymenMethod}");
     }
 
+
+//method show customers with credit card payment
     public static void CreditCardCustomers()
     {
         Console.WriteLine("Los clientes con tarjeta de credito son: ");
         customers.Where(customers => customers.PreferredPaymenMethod == "Tarjeta de credito").ToList().ForEach(customer => customer.GetInfoCustomers());
     }
-
-
 }

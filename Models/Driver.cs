@@ -12,7 +12,7 @@ public class Driver : User
     public int DrivingExperiences { get; set; }
 
 
-
+//constructor
     public Driver(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthdate, string email, string phoneNumber, string adreess, string lincenceNumber, string lincenceCategory, int drivingExperiences) : base(name, lastName, typeDocument, identificationNumber, birthdate, email, phoneNumber, adreess)
     {
         LicenseNumber = lincenceNumber;
@@ -21,6 +21,8 @@ public class Driver : User
     }
 
 
+
+//method to update license information
     public static void UpdateLicenseCategory()
     {
         Console.WriteLine("Ingrese el nombre del conductor al que le quieras cambiar la categoria ");
@@ -36,6 +38,9 @@ public class Driver : User
         }
 
     }
+
+
+//method to add experience
     public static void AddExperience()
     {
         Console.WriteLine("Ingres el nombre del conductor al que le quieras cambiar la categoria: ");
@@ -46,9 +51,13 @@ public class Driver : User
             Console.WriteLine($"ingrese los años experiencia de {driverName}: ");
             driverToUpdate.DrivingExperiences = int.Parse(Console.ReadLine());
             Console.WriteLine($"La experiencia del conductor {driverToUpdate.Name} {driverToUpdate.LastName} ha sido actualizada a {driverToUpdate.DrivingExperiences}");
+        }else{
+            Console.WriteLine("El conductor no se encuentra en la lista");
         }
     }
 
+
+//method show all drivers
     public static void AllCustomers()
     {
         foreach (var item in drivers)
@@ -63,7 +72,7 @@ public class Driver : User
         Console.WriteLine($"\n ID: {Id}\n nombre: {Name}\n Apellido: {LastName}\n Tipo de documento: {TypeDocument}\n numero de documento: {IdentificationNumber}\n fecha de nacimeinto: {Birthdate}\n correo electronico: {Email}\n Telefono: {PhoneNumber}\n direccion: {Adreess}\n Numero de licencia {LicenseNumber}\n categoria del conductor: {LicenseCategory}\n años de experiencia: {DrivingExperiences}");
     }
 
-
+//method show experience information
     public static void ExperieceYears()
     {
         Console.WriteLine("Los conductores con más años de experiencia son: ");
@@ -74,6 +83,8 @@ public class Driver : User
         }
     }
 
+
+//method show drivers with A2 category
     public static void categoryDriver()
     {
         Console.WriteLine("estos son los conductores con la categoria de A2: ");
