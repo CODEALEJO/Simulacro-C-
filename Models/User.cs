@@ -31,22 +31,44 @@ public class User
         Adreess = adreess;
 
     }
-
-    protected static void ShowDetails()
+//show datails person
+    protected void ShowDetails()
     {
+        Console.WriteLine($"\n nombre: {Name}\n Apellido: {LastName}\n Tipo de documento: {TypeDocument}\n numero de documento: {IdentificationNumber}\n fecha de nacimeinto: {Birthdate}\n correo electronico: {Email}\n Telefono: {PhoneNumber}\n direccion: {Adreess}");
     }
-    protected static void CalculateAge()
+    public void GetDetailt()
+    {
+        ShowDetails();
+    }
+//calculate age 
+    protected int CalculateAge()
+    {
+        if (!Birthdate.HasValue)
+            return 0;
+
+        DateOnly birthdate = Birthdate.Value;
+        int age = DateTime.Today.Year - birthdate.Year;
+        if (DateTime.Today < new DateTime(DateTime.Today.Year, birthdate.Month, birthdate.Day))
+        {
+            age--;
+        }
+        return age;
+    }
+
+    public void EncotrarUsuario(){
+        Console.WriteLine("ingrese el nombre del usuario que desea encontrar ");
+        string userName = Console.ReadLine();
+        // User userFound = user.FirstOrDefault(user => user.Name == userName);
+    }
+
+    public void ShowAge()
+    {
+        CalculateAge();
+    }
+
+    public static void OverThirty()
     {
 
-    }
-
-    protected static void ShowAge()
-    {
-
-    }
-
-    public static void OverThirty(){
-       
     }
 
 }

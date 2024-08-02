@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 using simulacroC__AlejandroCastrillon.Models;
 class MainClass
 {
-    public static void Main(string[] args)
+    public void Main(string[] args)
     {
         Customer customer1 = new Customer("Juan", "Perez", "Pasaporte", "Aw12345678", new DateOnly(1989, 10, 15), "juan@example.com", "+54-911-222-333-33", "Calle 123, 456", "Gold", "Tarjeta de credito");
         Customer customer2 = new Customer("Maria", "Garcia", "Cedula", "78945612", new DateOnly(1992, 5, 10), "maria@example.com", "+54-911-444-555-55", "Calle 456, 789", "Platinum", "PayPal");
@@ -52,8 +52,8 @@ class MainClass
             Console.WriteLine("|    9. Add experience                                 |");
             Console.WriteLine("|    10. View all registered vehicles                  |");
             Console.WriteLine("|    11. Delete vehicle                                |");
-            Console.WriteLine("|    12. Customers with credit card for payment        |");
-            Console.WriteLine("|    13. See drivers with A2 category                  |");
+            Console.WriteLine("|    12. Calculate age                                 |");
+            Console.WriteLine("|    13. Get persons details                           |");
             Console.WriteLine("|    14. GO OUT :)                                     |");
             Console.WriteLine("|======================================================|");
             int opcion = int.Parse(Console.ReadLine());
@@ -93,13 +93,11 @@ class MainClass
                 case 11:
                     Vehicle.DeleteVehicle(); //ready
                     break;
-
                 case 12:
-
+                    //User.CalculateAge();
                     break;
-
                 case 13:
-
+                    //User.GetDetailt();
                     break;
                 case 14:
                     Console.WriteLine("Gracias por utilizar nuestro programa."); //ready

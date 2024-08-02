@@ -1,4 +1,0 @@
-customers ya esta melo
-driver ya esta melo
-vehicle ya esta melo 
-consultas de linq solo me falta las de calcular la edad y de ordenar por mayores de 30
