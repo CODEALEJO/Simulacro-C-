@@ -37,7 +37,14 @@ class MainClass
             Console.WriteLine("|======================================================|");
             Console.WriteLine("|                  OTRAS OPCIONES                      |");
             Console.WriteLine("|======================================================|");
-            Console.WriteLine("|    7. GO OUT :)                                      |");
+            Console.WriteLine("|    7. Update membership level                        |");
+            Console.WriteLine("|    8. Update license category                        |");
+            Console.WriteLine("|    9. Add experience                                 |");
+            Console.WriteLine("|    10. See drivers with A2 category                  |");
+            Console.WriteLine("|    11. See drivers with A2 category                  |");
+            Console.WriteLine("|    12. Customers with credit card for payment        |");
+            Console.WriteLine("|    13. See drivers with A2 category                  |");
+            Console.WriteLine("|    14. GO OUT :)                                     |");
             Console.WriteLine("|======================================================|");
             int opcion = int.Parse(Console.ReadLine());
 
@@ -50,19 +57,47 @@ class MainClass
                     Driver.AllCustomers(); //ready
                     break;
                 case 3:
-                    User.OverThirty();
+                    User.OverThirty();//NICK
                     break;
                 case 4:
-                    Driver.ExperieceYears();
+                    Driver.ExperieceYears(); //ready
                     break;
                 case 5:
                     Customer.CreditCardCustomers(); //ready
                     break;
                 case 6:
-                    Driver.categoryDriver();
+                    Driver.categoryDriver(); //ready
                     break;
+
                 case 7:
-                    Console.WriteLine("Gracias por utilizar nuestro programa.");
+                    Customer.UpdateMemberShipLevel(); //ready
+                    break;
+
+                case 8:
+                    Driver.UpdateLicenseCategory();//ready
+                    break;
+
+                case 9:
+                    Driver.AddExperience();//ready
+                    break;
+
+                case 10:
+
+                    break;
+
+                case 11:
+
+                    break;
+
+                case 12:
+
+                    break;
+
+                case 13:
+
+                    break;
+                case 14:
+                    Console.WriteLine("Gracias por utilizar nuestro programa."); //ready
                     break;
                 default:
                     Console.WriteLine("Opción incorrecta, intente nuevamente.");

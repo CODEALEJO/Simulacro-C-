@@ -17,9 +17,19 @@ public class Customer : User
         PreferredPaymenMethod = preferredPaymenMethod;
     }
 
-    public void UpdateMemberShipLevel()
+    public static void UpdateMemberShipLevel()
     {
-
+        Console.WriteLine("Ingrese el nombre del cliente al que le quieras cambiar la membresia ");
+        string customerName = Console.ReadLine();
+        Customer customerToUpdate = customers.FirstOrDefault(customer => customer.Name == customerName);
+        if (customerToUpdate != null)
+        {
+            Console.WriteLine("Ingrese el nuevo nivel de membresia");
+            customerToUpdate.MemberShipLevel = Console.ReadLine();
+            Console.WriteLine($"El nivel de membresia de {customerToUpdate.Name} {customerToUpdate.LastName} ha sido actualizado a {customerToUpdate.MemberShipLevel}");
+        }else{
+            Console.WriteLine("El cliente no se encuentra en la lista");
+        }
     }
 
     public static void AllCustomers()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace simulacroC__AlejandroCastrillon.Models;
 public class Vehicle
 {
+    public static List<Vehicle> vehicles = new List<Vehicle>();
     public int Id { get; set; }
     public string? LicensePlate { get; set; }
     public string? Tipe { get; set; }

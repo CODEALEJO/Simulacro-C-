@@ -23,11 +23,30 @@ public class Driver : User
 
     public static void UpdateLicenseCategory()
     {
+        Console.WriteLine("Ingrese el nombre del conductor al que le quieras cambiar la categoria ");
+        string driverName = Console.ReadLine();
+        Driver driverToUpdate = drivers.FirstOrDefault(driver => driver.Name == driverName);
+        if (driverToUpdate != null)
+        {
+            Console.WriteLine("Ingrese la nueva categoria");
+            driverToUpdate.LicenseCategory = Console.ReadLine();
+            Console.WriteLine($"La categoria del conductor {driverToUpdate.Name} {driverToUpdate.LastName} ha sido actualizada a {driverToUpdate.LicenseCategory}");
+        }else{
+            Console.WriteLine("El conductor no se encuentra en la lista");
+        }
 
     }
     public static void AddExperience()
     {
-
+        Console.WriteLine("Ingres el nombre del conductor al que le quieras cambiar la categoria: ");
+        string driverName = Console.ReadLine();
+        Driver driverToUpdate = drivers.FirstOrDefault(driver => driver.Name == driverName);
+        if (driverToUpdate != null)
+        {
+            Console.WriteLine($"ingrese los años experiencia de {driverName}: ");
+            driverToUpdate.DrivingExperiences = int.Parse(Console.ReadLine());
+            Console.WriteLine($"La experiencia del conductor {driverToUpdate.Name} {driverToUpdate.LastName} ha sido actualizada a {driverToUpdate.DrivingExperiences}");
+        }
     }
 
     public static void AllCustomers()
